@@ -1,0 +1,18 @@
+---
+- hosts: dev
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: installing git
+      action: yum name=git state=present
+      tags: install
+    - name: installing tree
+      action: yum name=tree state=present
+      tags: install
+    - name: installing httpd
+      action: yum name=httpd state=present
+      tags: install
+    - name: installing docker
+      action: yum name=docker state=present
+
